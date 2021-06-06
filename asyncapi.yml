@@ -1,0 +1,30 @@
+asyncapi: 2.0.0
+info:
+  title: Banking backend events
+  version: 1.0.0
+channels:
+  banking.transaction.000:
+    description: |-
+      This contains events related to transactions.
+    publish:
+      operationId: consumeTransactionEvent
+      message:
+        $ref: '#/components/messages/trasactionEvent'
+components:
+  messages:
+    trasactionEvent:
+      name: trasactionEvent
+      schemaFormat: 'application/vnd.aai.asyncapi;version=2.0.0'
+      contentType: 'application/json'
+      payload:
+        $ref: '#/components/schemas/TransactionEventPayload'
+  schemas:
+    TransactionEventPayload:
+      name: "myschema"
+      title: "root"
+      type: object
+      properties:
+        transactionId:
+          description: Catalog id for the item
+          type: string
+          format: uuid
