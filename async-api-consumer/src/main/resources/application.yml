@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    function:
+      definition: consumeTransactionEvent
+    stream:
+      bindings:
+        consumeTransactionEvent-in-0:
+          destination: banking.transaction.000
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
