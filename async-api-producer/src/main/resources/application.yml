@@ -3,9 +3,13 @@ spring:
     function:
       definition: consumeTransactionEvent
     stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
       bindings:
         consumeTransactionEvent-out-0:
           destination: banking.transaction.000
+
 logging:
   level:
     root: info

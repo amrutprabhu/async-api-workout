@@ -13,12 +13,12 @@ import java.util.function.Supplier;
 
 
 @SpringBootApplication
-public class Application {
+public class CloudKafkaApplication {
 
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(CloudKafkaApplication.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class);
+        SpringApplication.run(CloudKafkaApplication.class);
     }
 
     @Bean
