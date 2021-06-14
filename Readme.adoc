@@ -1,0 +1,30 @@
+== AsyncAPI workout
+
+In this project I have experimented around using asyncAPI to create a define a definition nd then generate code from https://github.com/asyncapi/java-spring-template[java-spring-template]
+
+I have a simple Async API definition with just one topic/queue. The producer publishes to this queue/topic, and the subscriber reads messages from it.
+
+To generate code, you have to in the generator utility from https://github.com/asyncapi/generator[here].
+Then you can run the command
+```
+ag asyncapi.yml \
+@asyncapi/java-spring-template \
+-p javaPackage=com.amrut.prabhu.consumer \
+-p inverseOperations=false \
+--force-write  \
+-o async-kafka-consumer
+```
+
+This will generate the API user/consumer's application code.
+
+you can generate the API provider's code using the following command
+```
+ag asyncapi.yml \
+@asyncapi/java-spring-template \
+-p javaPackage=com.amrut.prabhu.producer \
+-p inverseOperations=true \
+--force-write  \
+-o async-kafka-producer
+```
+
+You can read more about this on my blog https://refactorfirst.com[RefactorFirst]
