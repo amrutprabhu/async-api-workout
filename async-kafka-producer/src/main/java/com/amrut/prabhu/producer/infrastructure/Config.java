@@ -41,7 +41,6 @@ public class Config {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        props.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, true);
         props.put(JsonSerializer.TYPE_MAPPINGS,
         "TransactionEventPayload:com.amrut.prabhu.producer.model.TransactionEventPayload"
         );
